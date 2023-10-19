@@ -23,8 +23,8 @@ jobs:
       - name: Deploy Terraform
         working-directory: ./terraform
         run: |
-          export TF_VAR_username=${{ secrets.RDS_USERNAME }}
-          export TF_VAR_password=${{ secrets.RDS_PASSWORD }}
+          export TF_VAR_username=${{ secrets.AWS_RDS_USERNAME }}
+          export TF_VAR_password=${{ secrets.AWS_RDS_PASSWORD }}
           rm -fr terraform.tfstate || echo 'Does not exist'
           terraform init -input=false
           terraform workspace new ${GITHUB_REF##*/} || echo 'Already exists'
