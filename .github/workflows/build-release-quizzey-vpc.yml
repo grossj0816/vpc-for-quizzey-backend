@@ -25,7 +25,7 @@ jobs:
         run: |
           export TF_VAR_username=${{ secrets.RDS_USERNAME }}
           export TF_VAR_password=${{ secrets.RDS_PASSWORD }}
-          rm -fr teerraform.tfstate || echo 'Does not exist'
+          rm -fr terraform.tfstate || echo 'Does not exist'
           terraform init -input=false
           terraform workspace new ${GITHUB_REF##*/} || echo 'Already exists'
           terraform workspace select ${GITHUB_REF##*/} && terraform apply -input=false -auto-approve
