@@ -21,7 +21,7 @@ jobs:
           
       # Deploy Terraform
       - name: Deploy Terraform
-        working-directory: ./terraform
+        working-directory: /terraform
         run: |
           export TF_VAR_username=${{ secrets.AWS_RDS_USERNAME }}
           export TF_VAR_password=${{ secrets.AWS_RDS_PASSWORD }}
