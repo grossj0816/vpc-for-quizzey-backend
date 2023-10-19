@@ -7,9 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      #  Check out repo
+      # Check out repo
       - name: Git Checkout
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v3
 
       # Configure AWS Credentials
       - name: Configure AWS Credentials
@@ -21,7 +21,7 @@ jobs:
 
       # Destroy Terraform
       - name: Destroy Terraform
-        working-directory: ../terraform
+        working-directory: ./terraform
         run: |
           export TF_VAR_username=${{ secrets.AWS_RDS_USERNAME }}
           export TF_VAR_password=${{ secrets.AWS_RDS_PASSWORD }}
