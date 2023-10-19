@@ -11,7 +11,7 @@ jobs:
       - name: Git Checkout
         uses: actions/setup-node@v3
 
-    # Configure AWS Credentials
+      # Configure AWS Credentials
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -19,7 +19,7 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRETS_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-    # Destroy Terraform
+      # Destroy Terraform
       - name: Destroy Terraform
         working-directory: ./terraform
         run: |
