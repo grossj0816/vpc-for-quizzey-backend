@@ -85,7 +85,7 @@ resource "aws_internet_gateway" "igw" {
 
 # Elastic IP
 resource "aws_eip" "nat_eip" {
-  vpc        = true
+  domain        = "vpc"
   depends_on = [aws_internet_gateway.igw]
 }
 
