@@ -28,5 +28,5 @@ jobs:
           rm -fr terraform.tfstate || echo 'Does not exist'
           terraform init -input=false 
           terraform workspace new ${GITHUB_REF##*/} || echo 'Already exists'
-          terraform workspace select ${GITHUB_REF##*/} && terraform destroy -input=false -auto-approve -lock=false
+          terraform workspace select ${GITHUB_REF##*/} && terraform destroy -input=false -auto-approve 
  
