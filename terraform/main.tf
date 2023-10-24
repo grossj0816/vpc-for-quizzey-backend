@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket         = "tc-terraform-state-storage-s3"
-    key            = "app-quizzey-networking"
+    key            = "app-quizzey-networking-1"
     region         = "us-east-1"
     dynamodb_table = "terraform-state-locking"
     encrypt        = true
