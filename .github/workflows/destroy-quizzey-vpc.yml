@@ -21,6 +21,7 @@ jobs:
 
       # Destroy Terraform
       - name: Destroy Terraform
+        uses: hashicorp/setup-terraform@v3
         working-directory: ./terraform
         run: |
           export TF_VAR_username=${{ secrets.AWS_RDS_USERNAME }}
