@@ -19,10 +19,12 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-          
-      # Deploy Terraform
-      - name: Setup & Deploy Terraform
+      # Setup Terraform
+      - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+
+      # Deploy Terraform
+      - name: Deploy Terraform
         working-directory: ./terraform
         run: |
           export TF_VAR_username=${{ secrets.AWS_RDS_USERNAME }}
